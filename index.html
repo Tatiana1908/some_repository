@@ -20,6 +20,10 @@
 </head>
 
 <body>
+    <div class="preloader">
+        <div class="loader">
+        </div>
+    </div>
     <header>
         <div class="container">
             <div class="header-top d-flex align-items-c justify-content-sb">
@@ -28,20 +32,27 @@
                         <img src="img/logo.png" alt="">
                     </a>
                 </div>
-                <ul class="header-nav d-flex">
-                    <li>
-                        <a href="" class="header-nav__links">About</a>
-                    </li>
-                    <li>
-                        <a href="" class="header-nav__links">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="" class="header-nav__links">Services</a>
-                    </li>
-                    <li>
-                        <a href="" class="header-nav__links">Contact</a>
-                    </li>
-                </ul>
+                <div id="menu">
+                    <ul class="header-nav d-flex">
+                        <li>
+                            <a href="" class="header-nav__links">About</a>
+                        </li>
+                        <li>
+                            <a href="" class="header-nav__links">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="" class="header-nav__links">Services</a>
+                        </li>
+                        <li>
+                            <a href="" class="header-nav__links">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
             </div>
             <div class="header-title white-text fadeInDown wow">
                 <h2 class="uppercase">
@@ -150,6 +161,136 @@
                     <p>Daisy is sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi
                         accumsan ipsum</p>
                 </div>
+                <div class="process-xs">
+                    <div class="proc-wrap">
+                        <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <polygon class="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" />
+                        </svg>
+                        <div class="proc-content">
+                            <span>STEP 1</span>
+                            <span>This is Photoshop&apos;s version of Lorem Ipsum. Proin gravida</span>
+                        </div>
+                    </div>
+                    <div class="proc-wrap">
+                        <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <polygon class="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" />
+                        </svg>
+                        <div class="proc-content">
+                            <span>STEP 2</span>
+                            <span>This is Photoshop&apos;s version of Lorem Ipsum. Proin gravida</span>
+                        </div>
+                    </div>
+                    <div class="proc-wrap">
+                        <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <polygon class="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" />
+                        </svg>
+                        <div class="proc-content">
+                            <span>STEP 3</span>
+                            <span>This is Photoshop&apos;s version of Lorem Ipsum. Proin gravida</span>
+                        </div>
+                    </div>
+                    <div class="proc-wrap">
+                        <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <polygon class="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" />
+                        </svg>
+                        <div class="proc-content">
+                            <span>STEP 4</span>
+                            <span>This is Photoshop&apos;s version of Lorem Ipsum. Proin gravida</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-step mobile">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 580 405"
+                        style="enable-background:new 0 0 870.8 609.2;" xml:space="preserve">
+                        <g id="poligon-group">
+                            <polygon class="st0" points="110.2,75.5 110.2,178.3 199.1,229.7 288.1,178.3 288.1,75.5 199.1,24.1 		"/>
+                            <polygon class="st0" points="21.2,229.5 21.2,332.3 110.2,383.7 199.1,332.3 199.1,229.5 110.2,178.1 		"/>
+                            <polygon class="st0" points="288.5,75.5 288.5,178.3 377.5,229.7 466.5,178.3 466.5,75.5 377.5,24.1 		"/>
+                            <polygon class="st0" points="377.5,229.5 377.5,332.3 466.5,383.7 555.5,332.3 555.5,229.5 466.5,178.1 		"/>
+                            <polygon class="st0" points="199.5,229.5 199.5,332.3 288.5,383.7 377.5,332.3 377.5,229.5 288.5,178.1 		"/>
+                        </g>
+                        <g id="hexagon-content">
+                            <g>
+                                <defs>
+                                    <pattern id="team" patternUnits="userSpaceOnUse" width="700" height="400">
+                                        <image xlink:href="img/team.jpg" y="100" x="200" width="300" height="400" />
+                                    </pattern>
+                                </defs>
+                                <polygon points="199.5,229.5 199.5,332.3 288.5,383.7 377.5,332.3 377.5,229.5 288.5,178.1 " fill="url(#team)" />
+                            </g>
+                            <g>
+                                <text transform="matrix(1 0 0 1 70 250)" class="step-title">STEP 1 </text>
+                                <text transform="matrix(1 0 0 1 40 280)" class="step-description">
+                                    <tspan x="0" y="0">This is Photoshop&apos;s </tspan>
+                                    <tspan x="0" y="18">version of Lorem </tspan>
+                                    <tspan x="0" y="36">Ipsum. Proin gravida</tspan>
+                                </text>
+                            </g>
+                            <g>
+                                <text transform="matrix(1 0 0 1 160 90)" class="step-title">STEP 2 </text>
+                                <text transform="matrix(1 0 0 1 130 120)" class="step-description">
+                                    <tspan x="0" y="0">This is Photoshop&apos;s </tspan>
+                                    <tspan x="0" y="18">version of Lorem </tspan>
+                                    <tspan x="0" y="36">Ipsum. Proin gravida</tspan>
+                                </text>
+                            </g>
+                            <g>
+                                <text transform="matrix(1 0 0 1 340 90)" class="step-title">STEP 3 </text>
+                                <text transform="matrix(1 0 0 1 310 120)" class="step-description">
+                                    <tspan x="0" y="0">This is Photoshop&apos;s </tspan>
+                                    <tspan x="0" y="18">version of Lorem </tspan>
+                                    <tspan x="0" y="36">Ipsum. Proin gravida</tspan>
+                                </text>
+                            </g>
+                            <g>
+                                <text transform="matrix(1 0 0 1 430 250)" class="step-title">STEP 4 </text>
+                                <text transform="matrix(1 0 0 1 400 280)" class="step-description">
+                                    <tspan x="0" y="0">This is Photoshop&apos;s </tspan>
+                                    <tspan x="0" y="18">version of Lorem </tspan>
+                                    <tspan x="0" y="36">Ipsum. Proin gravida</tspan>
+                                </text>
+                            </g>
+                        </g>
+                        <g id="red-line">
+                            <line class="st1" x1="110.2" y1="178.1" x2="10" y2="235"/>
+                            <line class="st1" x1="110.2" y1="178.1" x2="110.2" y2="75.5"/>
+                            <line class="st1" x1="199.1" y1="24.1" x2="110.2" y2="75.5"/>
+                            <line class="st1" x1="288.1" y1="75.5" x2="199.1" y2="24.1"/>
+                            <line class="st1" x1="377.5" y1="24.1" x2="288.1" y2="75.5"/>
+                            <line class="st1" x1="466.5" y1="75.5" x2="377.5" y2="24.1"/>
+                            <line class="st1" x1="466.5" y1="178.1" x2="466.5" y2="73.5"/>
+                            <line class="st1" x1="555.5" y1="229.5" x2="466.5" y2="178.1"/>
+                            <line class="st1" x1="555.5" y1="332.3" x2="555.5" y2="229.5"/>
+                            <line class="st1" x1="466.5" y1="383.7" x2="555.5" y2="332.3"/>
+                            <line class="st1" x1="110.2" y1="178.1" x2="110.2" y2="73.5"/>
+                            <line class="st1" x1="199.1" y1="24.1" x2="110.2" y2="75.5"/>
+                            <line class="st1" x1="288.1" y1="75.5" x2="199.1" y2="24.1"/>
+                            <line class="st1" x1="377.5" y1="24.1" x2="288.1" y2="75.5"/>
+                            <line class="st1" x1="466.5" y1="75.5" x2="377.5" y2="24.1"/>
+                            <line class="st1" x1="466.5" y1="178.1" x2="466.5" y2="75.5"/>
+                            <line class="st1" x1="555.5" y1="229.5" x2="466.5" y2="178.1"/>
+                            <line class="st1" x1="555.5" y1="334" x2="555.5" y2="229.5"/>
+                        </g>
+                        <g id="icons">
+                            <circle class="red-circle" cx="21.8" cy="229.7" r="17.7"/>
+                            <image style="overflow:visible;enable-background:new    ;" width="19" height="25" xlink:href="img/sprite/step-img-1.png"  transform="matrix(1 0 0 1 11.65 217.2)">
+                            </image>
+                            <circle class="red-circle" cx="199.1" cy="24.1" r="17.7"/>
+                            <image style="overflow:visible;enable-background:new    ;" width="23" height="21" xlink:href="img/sprite/step-img-2.png"  transform="matrix(1 0 0 1 187.65 13)">
+                            </image>
+                            <circle class="red-circle" cx="377.5" cy="24.1" r="17.7"/>
+                            <circle class="red-circle" cx="555.5" cy="229.7" r="17.7"/>
+                            <path class="red-circle" d="M466.5,400.4c-9.8,0-17.7-7.9-17.7-17.7s7.9-17.7,17.7-17.7s17.7,7.9,17.7,17.7 C484.1,392.5,476.2,400.4,466.5,400.4z"/>
+                            <image style="overflow:visible;enable-background:new    ;" width="23" height="21" xlink:href="img/sprite/step-img-4.png"  transform="matrix(1 0 0 1 543.9503 219.2)">
+                            </image>
+                            <image style="overflow:visible;enable-background:new    ;" width="22" height="25" xlink:href="img/sprite/step-img-3.png"  transform="matrix(1 0 0 1 366.4503 11.6)">
+                            </image>
+                            <circle class="white-circle" cx="466.5" cy="382.7" r="15"/>
+                            <image style="overflow:visible;enable-background:new    ;" width="16" height="19" xlink:href="img/sprite/step-img-5.png"  transform="matrix(1 0 0 1 458.4503 372.2)">
+                            </image>
+                        </g>
+                    </svg>
+                </div>
                 <div class="process-step">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 850 600"
                         style="enable-background:new 0 0 870.8 609.2;" xml:space="preserve">
@@ -201,7 +342,6 @@
                                     <tspan x="0" y="36">nibh vel velit auctor aliquet.</tspan>
                                 </text>
                             </g>
-                            This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
                         </g>
                         <g id="red-line">
                             <line class="st1 wow" x1="25.2" y1="188.3" x2="116" y2="136.8" />
@@ -266,7 +406,7 @@
             </div>
             <div class="wrapper">
                 <div class="container">
-                    <div class="proposal-wrap d-flex justify-content-sb">
+                    <div class="proposal-wrap d-flex justify-content-sb reverse">
                         <div class="img-block fadeInLeft wow">
                             <img src="img/macbook.png" alt="">
                         </div>
@@ -597,7 +737,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="column d-flex align-self-c">
+                        <div class="column d-flex align-self-c full-width-mob">
                             <div class="author-response">
                                 <div class="name">
                                     <span class="red-text">Alan</span> Richman
@@ -623,7 +763,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="column d-flex align-self-c">
+                        <div class="column d-flex align-self-c full-width-mob">
                             <div class="author-response">
                                 <div class="name">
                                     <span class="red-text">Alan</span> Richman
@@ -649,7 +789,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="column d-flex align-self-c">
+                        <div class="column d-flex align-self-c full-width-mob">
                             <div class="author-response">
                                 <div class="name">
                                     <span class="red-text">Alan</span> Richman
@@ -666,14 +806,14 @@
     <footer>
         <section class="location">
                 <div class="address">
-                        <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                            <polygon class="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" />
-                        </svg>
-                        <div class="address-content">
-                            <span>Daisy</span>
-                            <span>615 4th Ave S, Jackson&shy;ville Beach, FL 32250</span>
-                        </div>
+                    <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <polygon class="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" />
+                    </svg>
+                    <div class="address-content">
+                        <span>Daisy</span>
+                        <span>615 4th Ave S, Jackson&shy;ville Beach, FL 32250</span>
                     </div>
+                </div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d20506.636751407557!2d36.1995088!3d50.0239196!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1520662904795" frameborder="0" style="border:0" allowfullscreen></iframe>
             
         </section>

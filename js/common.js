@@ -24,3 +24,23 @@ $(document).ready(function(){
         
     });
 });
+;(function(){
+    
+    // preloader 
+    setTimeout(function(){
+        let preloader = document.querySelector('.preloader')
+        if (!preloader.classList.contains('done')){
+            preloader.classList.add('done')
+        };
+    }, 1000);
+    
+    let menuBtn = document.querySelector('.menu-btn'),
+        menu = document.querySelector('.header-nav');
+    
+
+    menuBtn.onclick = function(){
+        menu.classList.toggle('active');
+        menuBtn.classList.toggle('close')
+    }
+   
+}())

@@ -1,6 +1,5 @@
 /* VARIABLES START */
 /* VARIABLES END */
-@import url(../css/fonts.css);
 /* RESET START */
 * {
   -webkit-box-sizing: border-box;
@@ -363,6 +362,86 @@ label {
       line-height: 18px;
       text-align: center; }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: #fff;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  visibility: visible; }
+
+.preloader.done {
+  opacity: 0;
+  visibility: hidden; }
+
+.loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #9370DB;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+
+.loader::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #BA55D3;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite; }
+
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #FF00FF;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
 header {
   background: url(../img/header-bg.jpg);
   height: 765px;
@@ -381,18 +460,54 @@ header {
     opacity: .7; }
   header .header-top .logo {
     padding: 22px 0; }
-  header .header-top .header-nav {
+  header .header-top #menu .menu-btn {
+    cursor: pointer;
+    position: relative;
+    display: none;
+    margin-right: 10px;
+    -webkit-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear; }
+    header .header-top #menu .menu-btn.close {
+      margin-right: 120px; }
+      header .header-top #menu .menu-btn.close span:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      header .header-top #menu .menu-btn.close span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+      header .header-top #menu .menu-btn.close span:nth-child(2) {
+        display: none; }
+      header .header-top #menu .menu-btn.close span + span {
+        margin-top: -3px; }
+    header .header-top #menu .menu-btn span {
+      height: 4px;
+      background-color: #fc635e;
+      width: 38px;
+      display: block;
+      -webkit-transition: -webkit-transform .4s linear;
+      transition: -webkit-transform .4s linear;
+      -o-transition: transform .4s linear;
+      transition: transform .4s linear;
+      transition: transform .4s linear, -webkit-transform .4s linear; }
+      header .header-top #menu .menu-btn span + span {
+        margin-top: 7px; }
+  header .header-top #menu .header-nav {
     height: 30px; }
-    header .header-top .header-nav li {
+    header .header-top #menu .header-nav.active {
+      display: block; }
+    header .header-top #menu .header-nav li {
       padding: 7px 0; }
-      header .header-top .header-nav li + li {
+      header .header-top #menu .header-nav li + li {
         margin-left: 45px; }
-      header .header-top .header-nav li:hover {
+      header .header-top #menu .header-nav li:hover {
         border-bottom: 4px solid #fc635e; }
-        header .header-top .header-nav li:hover .header-nav__links {
+        header .header-top #menu .header-nav li:hover .header-nav__links {
           color: #fc635e;
           margin-top: -5px; }
-      header .header-top .header-nav li .header-nav__links {
+      header .header-top #menu .header-nav li .header-nav__links {
         text-transform: uppercase;
         font-family: "Conv_pfsquaresanspro-light", sans-serif;
         font-size: 16px;
@@ -484,105 +599,123 @@ header {
     .main .expand-your-business .border-block .btn {
       margin-top: 50px; }
 
-.main .process-step {
+.main .process .process-xs {
+  display: none; }
+
+.main .process .process-step {
   padding: 60px 50px; }
-  .main .process-step .st0 {
+  .main .process .process-step.mobile {
+    display: none; }
+    .main .process .process-step.mobile .st1 {
+      -webkit-animation: none;
+              animation: none;
+      stroke-dashoffset: 0; }
+    .main .process .process-step.mobile #icons image {
+      -webkit-animation: none;
+              animation: none;
+      opacity: 1; }
+    .main .process .process-step.mobile #icons .red-circle, .main .process .process-step.mobile #icons .white-circle {
+      -webkit-animation: none;
+              animation: none;
+      fill-opacity: 1;
+      stroke-opacity: 1; }
+  .main .process .process-step .st0 {
     fill: #fff;
     stroke-width: 1px;
     stroke: #adadad; }
-  .main .process-step .st1 {
+  .main .process .process-step .st1 {
     fill: none;
     stroke: #fc635e;
     stroke-width: 5px; }
-  .main .process-step .st1 {
+  .main .process .process-step .st1 {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
     -webkit-animation: offset 15s linear infinite;
             animation: offset 15s linear infinite; }
-    .main .process-step .st1:nth-child(1) {
+    .main .process .process-step .st1:nth-child(1) {
       -webkit-animation-delay: 0.25s;
               animation-delay: 0.25s; }
-    .main .process-step .st1:nth-child(2) {
+    .main .process .process-step .st1:nth-child(2) {
       -webkit-animation-delay: 0.5s;
               animation-delay: 0.5s; }
-    .main .process-step .st1:nth-child(3) {
+    .main .process .process-step .st1:nth-child(3) {
       -webkit-animation-delay: 0.75s;
               animation-delay: 0.75s; }
-    .main .process-step .st1:nth-child(4) {
+    .main .process .process-step .st1:nth-child(4) {
       -webkit-animation-delay: 1s;
               animation-delay: 1s; }
-    .main .process-step .st1:nth-child(5) {
+    .main .process .process-step .st1:nth-child(5) {
       -webkit-animation-delay: 1.25s;
               animation-delay: 1.25s; }
-    .main .process-step .st1:nth-child(6) {
+    .main .process .process-step .st1:nth-child(6) {
       -webkit-animation-delay: 1.5s;
               animation-delay: 1.5s; }
-    .main .process-step .st1:nth-child(7) {
+    .main .process .process-step .st1:nth-child(7) {
       -webkit-animation-delay: 1.75s;
               animation-delay: 1.75s; }
-    .main .process-step .st1:nth-child(8) {
+    .main .process .process-step .st1:nth-child(8) {
       -webkit-animation-delay: 2s;
               animation-delay: 2s; }
-    .main .process-step .st1:nth-child(9) {
+    .main .process .process-step .st1:nth-child(9) {
       -webkit-animation-delay: 2.25s;
               animation-delay: 2.25s; }
-    .main .process-step .st1:nth-child(10) {
+    .main .process .process-step .st1:nth-child(10) {
       -webkit-animation-delay: 2.5s;
               animation-delay: 2.5s; }
-    .main .process-step .st1:nth-child(11) {
+    .main .process .process-step .st1:nth-child(11) {
       -webkit-animation-delay: 2.75s;
               animation-delay: 2.75s; }
-    .main .process-step .st1:nth-child(12) {
+    .main .process .process-step .st1:nth-child(12) {
       -webkit-animation-delay: 3.1s;
               animation-delay: 3.1s; }
-    .main .process-step .st1:nth-child(13) {
+    .main .process .process-step .st1:nth-child(13) {
       -webkit-animation-delay: 3.5s;
               animation-delay: 3.5s; }
-    .main .process-step .st1:nth-child(14) {
+    .main .process .process-step .st1:nth-child(14) {
       -webkit-animation-delay: 3.9s;
               animation-delay: 3.9s; }
-  .main .process-step #icons image {
+  .main .process .process-step #icons image {
     opacity: 0;
     -webkit-animation: icons 15s linear infinite;
             animation: icons 15s linear infinite; }
-    .main .process-step #icons image:nth-child(3) {
+    .main .process .process-step #icons image:nth-child(3) {
       -webkit-animation-delay: 1s;
               animation-delay: 1s; }
-    .main .process-step #icons image:nth-child(4) {
+    .main .process .process-step #icons image:nth-child(4) {
       -webkit-animation-delay: 1.2s;
               animation-delay: 1.2s; }
-    .main .process-step #icons image:nth-child(6) {
+    .main .process .process-step #icons image:nth-child(6) {
       -webkit-animation-delay: 1.9s;
               animation-delay: 1.9s; }
-    .main .process-step #icons image:nth-child(8) {
+    .main .process .process-step #icons image:nth-child(8) {
       -webkit-animation-delay: 2.5s;
               animation-delay: 2.5s; }
-    .main .process-step #icons image:nth-child(11) {
+    .main .process .process-step #icons image:nth-child(11) {
       -webkit-animation-delay: 4s;
               animation-delay: 4s; }
-  .main .process-step #icons .red-circle {
+  .main .process .process-step #icons .red-circle {
     fill: #FC635E;
     stroke: #FC635E;
     fill-opacity: 0;
     stroke-opacity: 0;
     -webkit-animation: circles 15s linear infinite;
             animation: circles 15s linear infinite; }
-    .main .process-step #icons .red-circle:nth-child(2) {
+    .main .process .process-step #icons .red-circle:nth-child(2) {
       -webkit-animation-delay: 1s;
               animation-delay: 1s; }
-    .main .process-step #icons .red-circle:nth-child(3) {
+    .main .process .process-step #icons .red-circle:nth-child(3) {
       -webkit-animation-delay: 1.2s;
               animation-delay: 1.2s; }
-    .main .process-step #icons .red-circle:nth-child(5) {
+    .main .process .process-step #icons .red-circle:nth-child(5) {
       -webkit-animation-delay: 1.9s;
               animation-delay: 1.9s; }
-    .main .process-step #icons .red-circle:nth-child(7) {
+    .main .process .process-step #icons .red-circle:nth-child(7) {
       -webkit-animation-delay: 2.5s;
               animation-delay: 2.5s; }
-    .main .process-step #icons .red-circle:nth-child(9) {
+    .main .process .process-step #icons .red-circle:nth-child(9) {
       -webkit-animation-delay: 4s;
               animation-delay: 4s; }
-  .main .process-step #icons .white-circle {
+  .main .process .process-step #icons .white-circle {
     fill: #FFFFFF;
     stroke: #FFFFFF;
     fill-opacity: 0;
@@ -591,12 +724,12 @@ header {
             animation: circles 15s linear infinite;
     -webkit-animation-delay: 4.2s;
             animation-delay: 4.2s; }
-  .main .process-step #hexagon-content .step-title {
+  .main .process .process-step #hexagon-content .step-title {
     fill: #868686;
     font-family: "Conv_pfsquaresanspro-medium", sans-serif;
     font-size: 24px;
     text-decoration: underline; }
-  .main .process-step #hexagon-content .step-description {
+  .main .process .process-step #hexagon-content .step-description {
     fill: #adadad;
     max-width: 150px; }
 
@@ -827,7 +960,7 @@ footer .location {
     width: 100%; }
   footer .location .address {
     position: absolute;
-    height: 240px;
+    height: 210px;
     width: 230px;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -876,3 +1009,212 @@ footer .bottom-footer {
   footer .bottom-footer .logo {
     height: 100%;
     position: relative; }
+
+@media (max-width: 991px) {
+  header {
+    height: 660px; }
+    header .header-title {
+      margin-top: 125px; }
+      header .header-title h2 {
+        font-size: 45px; }
+        header .header-title h2:before, header .header-title h2:after {
+          top: 43%; }
+  .main .process .process-step {
+    padding: 40px 0; }
+  .main .portfolio .portfolio-tabs .tab .tablinks {
+    font-size: 16px; }
+  .main .portfolio .portfolio-tabs .tabcontent .portfolio-wrap .portfolio-img .portfolio-img-hover span:first-child {
+    font-size: 24px; } }
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 50px 10px; }
+    .wrapper .subtitle p {
+      text-align: center; }
+  header .header-top #menu {
+    position: relative; }
+    header .header-top #menu .header-nav {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: -20px; }
+      header .header-top #menu .header-nav li {
+        text-align: right; }
+        header .header-top #menu .header-nav li + li {
+          margin-left: 0;
+          margin-top: 15px; }
+    header .header-top #menu .menu-btn {
+      display: block; }
+  header .header-title h2 {
+    font-size: 38px; }
+  header .header-title .subtitle {
+    font-size: 19px;
+    line-height: 20px; }
+  .main .item-block {
+    padding-top: 20px;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+    .main .item-block .item {
+      margin-top: 20px;
+      max-width: 50%;
+      padding: 35px 10px; }
+      .main .item-block .item + .item {
+        margin-left: 0; }
+  .main .expand-your-business .border-block h2 {
+    font-size: 45px; }
+  .main .img-block {
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center; }
+  .main .portfolio .portfolio-tabs .tab {
+    padding: 10px 30px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+    .main .portfolio .portfolio-tabs .tab button, .main .portfolio .portfolio-tabs .tab .slash {
+      padding: 20px 15px; }
+  .main .portfolio .portfolio-tabs .tabcontent .portfolio-wrap .portfolio-img.big {
+    width: 100%; }
+  .main .portfolio .portfolio-tabs .tabcontent .portfolio-wrap .portfolio-img.middle {
+    width: 53%; }
+  .main .portfolio .portfolio-tabs .tabcontent .portfolio-wrap .portfolio-img.small {
+    width: 47%; }
+  .main .our-team .employees {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .main .our-team .employees .employee-item {
+      width: 50%; }
+  .main .response .slider-content .column .photo {
+    min-width: 125px; }
+  footer {
+    padding-top: 50px; } }
+
+@media (max-width: 599px) {
+  header .header-title {
+    margin-top: 100px; }
+    header .header-title h2 {
+      line-height: 45px;
+      margin-bottom: 30px; }
+      header .header-title h2::before {
+        display: none; }
+      header .header-title h2::after {
+        width: 100%;
+        right: 0;
+        top: 105%;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none; }
+      header .header-title h2 span {
+        display: block; }
+  header .find-client::after {
+    display: none; }
+  .main .expand-your-business .border-block h2 {
+    text-align: center; }
+    .main .expand-your-business .border-block h2 span {
+      display: block; }
+  .main .process .process-step.mobile {
+    display: block; }
+  .main .process .process-step {
+    display: none; }
+  .main .img-block {
+    display: none; }
+  .main .proposals .proposal-wrap.reverse {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .main .our-team .employees .employee-item .employee-name, .main .response .slider-content .column .author-response .name {
+    font-size: 22px; }
+  .main .response .slider-content {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+    .main .response .slider-content .column {
+      width: 50%; }
+      .main .response .slider-content .column.full-width-mob {
+        width: 100%;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
+
+@media (max-width: 479px) {
+  .wrapper .title-small h2 {
+    text-align: center; }
+    .wrapper .title-small h2 span {
+      display: block; }
+  header {
+    height: 500px; }
+    header .header-top #menu .menu-btn.close {
+      margin-right: 10px; }
+    header .header-top #menu .header-nav {
+      top: 35px;
+      width: 200px;
+      z-index: 2; }
+      header .header-top #menu .header-nav li {
+        text-align: right;
+        background-color: #868686;
+        padding: 14px; }
+        header .header-top #menu .header-nav li + li {
+          margin-top: 1px; }
+    header .header-title {
+      margin-top: 60px; }
+      header .header-title h2 {
+        font-size: 34px; }
+  .main .item-block .item {
+    max-width: 100%; }
+  .main .expand-your-business .border-block h2 {
+    font-size: 38px; }
+  .main .portfolio .portfolio-tabs .tab {
+    padding: 5px; }
+  .main .our-team .employees .employee-item {
+    width: 100%; }
+  .main .process .process-step.mobile {
+    display: none; }
+  .main .process .process-xs {
+    display: block; }
+    .main .process .process-xs .proc-wrap {
+      margin: 0 auto;
+      margin-top: 30px;
+      position: relative;
+      height: 210px;
+      width: 230px; }
+      .main .process .process-xs .proc-wrap svg {
+        overflow: visible; }
+      .main .process .process-xs .proc-wrap .hex {
+        stroke: #fc635e;
+        stroke-width: 1px;
+        fill: #fff; }
+      .main .process .process-xs .proc-wrap .proc-content {
+        width: 160px;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translate(-50%, 30%);
+            -ms-transform: translate(-50%, 30%);
+                transform: translate(-50%, 30%);
+        top: 0; }
+        .main .process .process-xs .proc-wrap .proc-content span {
+          display: block;
+          text-align: center; }
+          .main .process .process-xs .proc-wrap .proc-content span:first-child {
+            width: -webkit-max-content;
+            width: -moz-max-content;
+            width: max-content;
+            padding: 5px;
+            border-bottom: 1px solid #adadad;
+            font-family: "Conv_pfsquaresanspro-medium", sans-serif;
+            margin: 0 auto;
+            font-size: 38px;
+            margin-bottom: 20px; }
+          .main .process .process-xs .proc-wrap .proc-content span:last-child {
+            line-height: 20px; } }
